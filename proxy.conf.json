@@ -1,0 +1,12 @@
+{
+  "/admin": {
+    "target": "http://0.0.0.0:4201",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api": {
+    "target": "http://0.0.0.0:4201",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
