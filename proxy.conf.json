@@ -1,11 +1,11 @@
 {
   "/admin": {
-    "target": "http://0.0.0.0:4201",
+    "target": "http://node-microservice-qa.herokuapp.com",
     "secure": false,
     "changeOrigin": true
   },
   "/api": {
-    "target": "http://0.0.0.0:4201",
+    "target": "http://node-microservice-qa.herokuapp.com",
     "secure": false,
     "changeOrigin": true
   }
