@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import jwtDecode from 'jwt-decode';
 
 @Component({
   selector: "app-home",
@@ -11,8 +12,10 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    if (localStorage.getItem("user")) {
-      this.loggedInUser = JSON.parse(localStorage.getItem("user")).userName;
+    if (localStorage.getItem("token")) {
+      const token = localStorage.getItem('token');
+      const tokenPayload = jwtDecode(token);
+      this.loggedInUser = tokenPayload['userName'];
     }
   }
 }

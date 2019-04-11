@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
   providedIn: "root"
 })
 export class AuthService {
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
   getUser(userInfo) {
     // Get user details from API [POST getUser]
@@ -24,10 +24,18 @@ export class AuthService {
         if (localStorage.getItem("token") === null) {
           localStorage.setItem("token", response["token"]);
           localStorage.setItem("tokenExpiration", response["tokenExpiration"]);
-          localStorage.setItem("user", JSON.stringify(response["user"]));
 
           this.router.navigateByUrl('');
         }
       });
+  }
+
+  getUsers(token) {
+    // send token to Node Micorservice to check
+    // user isAdmin if yes then, fetch data else, STOP
+    this.http.post("/admin/users", { token }).subscribe(response => {
+      console.log(response);
+      response['success'];
+    });
   }
 }
