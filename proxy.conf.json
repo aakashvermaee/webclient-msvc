@@ -1,0 +1,12 @@
+{
+  "/admin": {
+    "target": "http://node-microservice-qa.herokuapp.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api": {
+    "target": "http://node-microservice-qa.herokuapp.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
