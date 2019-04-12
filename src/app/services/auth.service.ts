@@ -32,10 +32,7 @@ export class AuthService {
 
   getUsers(token) {
     // send token to Node Micorservice to check
-    // user isAdmin if yes then, fetch data else, STOP
-    this.http.post("/admin/users", { token }).subscribe(response => {
-      console.log(response);
-      response['success'];
-    });
+    // user isAdmin if yes then, fetch data else, STOP!!!
+    return this.http.post("/admin/users", { token })
   }
 }

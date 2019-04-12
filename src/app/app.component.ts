@@ -18,7 +18,6 @@ export class AppComponent {
     if (tokenExpiration <= elapsedTime) {
       localStorage.removeItem("token");
       localStorage.removeItem("tokenExpiration");
-      localStorage.removeItem("user");
     }
   }
 }
